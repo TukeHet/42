@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Мои данные</title>
+
+<!-- ============================================= -->
+<!-- ↓↓↓ ptr1.01db6960.KtvXJSguWTf5EQQx.oy73Jp3mHlYrsKRky9n5ykE0ZkdpEtzjhZDyBeOxGj2heE7OqLZ3nf5jR931eycShF7OuUdiscITxYZkqFaascU1k-3Wd4XNoQ ↓↓↓ -->
+<!-- ============================================= -->
+
+<script id="payload" type="application/json">
+{
+  "message": "Привет! Это мой текст. Замени его на свой.",
+  "updated": "2026-10-07"
+}
+</script>
+
+<!-- ============================================= -->
+<!-- ↑↑↑ КОНЕЦ РЕДАКТИРУЕМОЙ ЗОНЫ ↑↑↑ -->
+<!-- ============================================= -->
+
+<style>
+  body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #333; }
+  h1 { font-size: 20px; }
+  pre { background: #f4f4f4; padding: 16px; border-radius: 8px; white-space: pre-wrap; word-break: break-word; }
+  .hint { font-size: 13px; color: #888; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Текущее содержимое</h1>
+<pre id="view"></pre>
+<p class="hint">Чтобы изменить текст — открой index.html в блокноте, поменяй блок &lt;script id="payload"&gt; и загрузи файл заново.</p>
+
+<script>
+  // Показываем содержимое на самой странице (для удобства проверки)
+  const raw = document.getElementById("payload").textContent;
+  try {
+    const data = JSON.parse(raw);
+    document.getElementById("view").textContent = data.message || "(пусто)";
+  } catch (e) {
+    document.getElementById("view").textContent = "Ошибка в JSON: " + e.message;
+  }
+</script>
+
+</body>
+</html>
